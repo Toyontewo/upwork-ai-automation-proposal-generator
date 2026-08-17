@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "upwork-ai-automation-proposal-generator",
+  "displayName": "Upwork AI Automation Proposal Generator Marketplace",
+  "version": "1.0.0",
+  "description": "Official marketplace catalog containing the Upwork AI Automation Proposal Generator skill for n8n, Make, and Zapier workflow builds.",
+  "author": {
+    "name": "Toyo Ntewo"
+  },
+  "homepage": "https://github.com/toyontewo/upwork-ai-automation-proposal-generator",
+  "license": "MIT",
+  "skills": [
+    {
+      "name": "upwork-ai-automation-proposal-generator",
+      "displayName": "Upwork AI Automation Proposal Generator",
+      "version": "1.0.0",
+      "description": "Given an Upwork job title or full description, generates a complete, ready-to-send proposal package for AI automation gigs (n8n, Make, Zapier). Outputs a single-page HTML proposal (Project Title, Summary, Case Study, Cover Letter, Build Plan) and a separate teleprompter-style Loom video script.",
+      "path": ".agent/skills/upwork-proposal-generator/SKILL.md",
+      "category": "AI Automation & Sales",
+      "tags": [
+        "upwork",
+        "n8n",
+        "make",
+        "zapier",
+        "proposal-generator",
+        "ai-automation",
+        "loom-script",
+        "case-study"
+      ],
+      "resources": [
+        ".agent/skills/upwork-proposal-generator/references/workflow_library.md"
+      ]
+    },
+    {
+      "name": "html-3d-canvas",
+      "displayName": "Upwork AI Automation Proposal Generator (HTML Canvas Variant)",
+      "version": "1.0.0",
+      "description": "Variant installation path for the Upwork AI Automation Proposal Generator skill.",
+      "path": ".agent/skills/html-3d-canvas/SKILL.md",
+      "category": "AI Automation & Sales",
+      "tags": [
+        "upwork",
+        "n8n",
+        "proposal-generator",
+        "html-canvas"
+      ],
+      "resources": [
+        ".agent/skills/html-3d-canvas/references/workflow_library.md"
+      ]
+    }
+  ],
+  "plugins": [
+    {
+      "name": "upwork-ai-automation-proposal-plugin",
+      "displayName": "Upwork AI Automation Proposal Plugin",
+      "version": "1.0.0",
+      "description": "Complete plugin bundle for generating high-converting Upwork AI automation proposals with n8n workflow libraries.",
+      "author": "Toyo Ntewo",
+      "skills": [
+        "upwork-ai-automation-proposal-generator",
+        "html-3d-canvas"
+      ]
+    }
+  ]
+}
