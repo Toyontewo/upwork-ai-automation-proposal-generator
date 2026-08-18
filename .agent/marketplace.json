@@ -13,22 +13,25 @@
     {
       "name": "upwork-ai-automation-proposal-generator",
       "displayName": "Upwork AI Automation Proposal Generator",
-      "version": "1.0.0",
-      "description": "Given an Upwork job title or full description, generates a complete, ready-to-send proposal package for AI automation gigs (n8n, Make, Zapier). Outputs a single-page HTML proposal (Project Title, Summary, Case Study, Cover Letter, Build Plan) and a separate teleprompter-style Loom video script.",
+      "version": "2.0.0",
+      "description": "Given an Upwork job title or full description, generates a 5-file proposal package: proposal.html (light-themed, Harris Automations-style), build-plan.html (animated Loom walkthrough), loom_script.txt (teleprompter script), workflow.json (real n8n template from n8n.io API as social proof), and upwork_macro.txt (ready-to-paste cover letter).",
       "path": "skills/upwork-proposal-generator/SKILL.md",
       "category": "AI Automation & Sales",
       "tags": [
         "upwork",
         "n8n",
-        "make",
-        "zapier",
         "proposal-generator",
         "ai-automation",
         "loom-script",
-        "case-study"
+        "case-study",
+        "workflow-json",
+        "build-plan"
       ],
       "resources": [
-        "skills/upwork-proposal-generator/references/workflow_library.md"
+        "skills/upwork-proposal-generator/references/workflow_library.md",
+        "skills/upwork-proposal-generator/references/n8n_api_guide.md",
+        "skills/upwork-proposal-generator/references/html_templates/proposal_template.html",
+        "skills/upwork-proposal-generator/references/html_templates/build_plan_template.html"
       ]
     },
     {

@@ -1,6 +1,10 @@
 # n8n Automation Reference Library
 
-This reference library contains 8 foundational n8n workflow categories. Use these templates in Step 3 when sourcing an adjacent, thematically relevant workflow template to adapt into a believable prior client case study (Step 4).
+This reference library contains 8 foundational n8n workflow categories. Use these in Step 3 to identify the correct workflow *category* for the case study.
+
+> **Two-tier sourcing strategy:**
+> 1. **Local library (this file):** Use to identify the correct category and understand the typical architecture, node types, and metrics for the case study narrative.
+> 2. **Live n8n.io API (see [`n8n_api_guide.md`](./n8n_api_guide.md)):** Search for a real, free workflow template that matches the identified category. Download its JSON to include as `workflow.json` in the output. This gives the prospect a real, importable n8n workflow they can open alongside the Loom recording.
 
 ---
 

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><!-- PROPOSAL_TITLE --> — Toyo Ntewo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ========================================
+       DESIGN SYSTEM — Light Theme
+       Matches Harris Automations reference
+       ======================================== */
+
+    :root {
+      --bg: #ffffff;
+      --bg-subtle: #f8f9fa;
+      --card-bg: #f5f5f7;
+      --text: #1a1a1a;
+      --text-muted: #6b7280;
+      --text-label: #9ca3af;
+      --accent: #2563eb;
+      --accent-light: #dbeafe;
+      --green: #16a34a;
+      --green-bg: #16a34a;
+      --green-text: #ffffff;
+      --border: #e5e7eb;
+      --border-accent: #2563eb;
+      --divider: #e5e7eb;
+      --pill-bg: #f3f4f6;
+      --pill-border: #d1d5db;
+      --pill-text: #374151;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* --- Layout --- */
+    .page-container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 2rem 4rem;
+    }
+
+    /* --- Header --- */
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .brand-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .header-link {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* --- Section Labels --- */
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--text-label);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.75rem;
+    }
+
+    /* --- Project Title --- */
+    .project-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.15;
+      margin-bottom: 2rem;
+      letter-spacing: -0.02em;
+    }
+
+    /* --- Summary Callout Box --- */
+    .summary-callout {
+      border-left: 4px solid var(--border-accent);
+      background: var(--accent-light);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 1.5rem;
+    }
+
+    .summary-callout .callout-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+
+    .summary-callout p {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* --- Observation --- */
+    .observation {
+      margin-bottom: 2.5rem;
+    }
+
+    .observation p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .observation strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* --- Tech Stack Pills --- */
+    .tech-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--pill-text);
+      background: var(--pill-bg);
+      border: 1px solid var(--pill-border);
+      border-radius: 999px;
+      padding: 0.35rem 0.85rem;
+    }
+
+    /* --- Divider --- */
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--divider);
+      margin: 2.5rem 0;
+    }
+
+    /* --- Case Study Card --- */
+    .case-study-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cs-heading {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--text-label);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .cs-heading:first-child {
+      margin-top: 0;
+    }
+
+    .case-study-card ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+      margin: 0;
+    }
+
+    .case-study-card li {
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.65;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    /* --- Loom Sections --- */
+    .loom-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .loom-section .section-title {
+      font-size: 1.35rem;
+    }
+
+    .loom-section p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+
+    /* --- Buttons --- */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--green-bg);
+      color: var(--green-text);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.65rem 1.25rem;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.6rem 1.15rem;
+      border-radius: 8px;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-subtle);
+    }
+
+    .btn-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .served-note {
+      font-size: 0.78rem;
+      color: var(--text-label);
+      margin-top: 0.75rem;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 640px) {
+      .page-container {
+        padding: 2rem 1.25rem 3rem;
+      }
+      .project-title {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header">
+      <div class="brand-name">Toyo Ntewo.</div>
+      <a href="#script" class="header-link">Script</a>
+    </header>
+
+    <!-- ===== PROJECT SECTION ===== -->
+    <div class="section-label">Project</div>
+    <h1 class="project-title" id="project-title">
+      <!-- PLACEHOLDER: Project title goes here -->
+      Ad-to-Order Automation System for US Clothing DTC
+    </h1>
+
+    <!-- Summary Callout -->
+    <div class="summary-callout">
+      <div class="callout-label">Summary &mdash; open with this</div>
+      <p id="summary-text">
+        <!-- PLACEHOLDER: 2-3 sentence hook opening with #1 pain point -->
+        You need ad traffic to convert into paid orders predictably. Every lead followed up instantly, every abandoned cart recovered with a personalised AI email, every order flowing cleanly from checkout to your Karachi warehouse, all visible from one place.
+      </p>
+    </div>
+
+    <!-- Observation -->
+    <div class="observation">
+      <p>
+        <strong>Observation:</strong>
+        <!-- PLACEHOLDER: Direct observation about the client's situation -->
+        You're spending on Google + Meta ads but the bottleneck isn't traffic. It's what happens between the click and the order. Most builders connect the apps and call it a day, which is why your CAC creeps up while half your funnel sits cold.
+      </p>
+    </div>
+
+    <!-- Tech Stack Pills -->
+    <div class="tech-pills" id="tech-pills">
+      <!-- PLACEHOLDER: Generate pills based on job post tools -->
+      <span class="pill">n8n</span>
+      <span class="pill">GoHighLevel</span>
+      <span class="pill">Shopify</span>
+      <span class="pill">OpenAI</span>
+      <span class="pill">Airtable</span>
+      <span class="pill">Klaviyo</span>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ===== CASE STUDY SECTION ===== -->
+    <div class="section-label">Case Study</div>
+    <h2 class="section-title">A previous build that matches their pain</h2>
+
+    <div class="case-study-card" id="case-study">
+      <div class="cs-heading">Previous Client Build</div>
+      <ul>
+        <li><!-- PLACEHOLDER: 1-2 line description of the fictional previous client and their business --></li>
+      </ul>
+
+      <div class="cs-heading">Problem</div>
+      <ul>
+        <!-- PLACEHOLDER: 3-4 bullet points describing the previous client's pain -->
+        <li>Tens of thousands of checkouts started per month, ~68% abandoned</li>
+        <li>Generic recovery emails were converting at 2.1%</li>
+        <li>Founder pulling abandonment reports from Shopify manually every morning</li>
+      </ul>
+
+      <div class="cs-heading">Solution</div>
+      <ul>
+        <!-- PLACEHOLDER: 4-5 bullet points describing the automation built -->
+        <li>Shopify webhook fires the moment a checkout is created</li>
+        <li>Smart wait period before any recovery action, to avoid email fatigue</li>
+        <li>Workflow re-queries Shopify to confirm the cart is still abandoned</li>
+        <li>&#x1F389; OpenAI generates a personalised recovery email using cart contents and customer history</li>
+        <li>Email sent via SMTP, every result logged for reporting</li>
+      </ul>
+
+      <div class="cs-heading">Result</div>
+      <ul>
+        <!-- PLACEHOLDER: 1-2 bullet points with quantifiable outcomes -->
+        <li>Lifted recovered-revenue conversion from 2.1% to 11.4% and recovered $47k of abandoned cart value in the first 6 weeks.</li>
+      </ul>
+    </div>
+
+    <!-- Tech pills repeated under case study -->
+    <div class="tech-pills">
+      <span class="pill">n8n</span>
+      <span class="pill">GoHighLevel</span>
+      <span class="pill">Shopify</span>
+      <span class="pill">OpenAI</span>
+      <span class="pill">Airtable</span>
+      <span class="pill">Klaviyo</span>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ===== N8N WALKTHROUGH SECTION ===== -->
+    <div class="section-label">For the Loom &mdash; n8n Walkthrough</div>
+    <div class="loom-section">
+      <h2 class="section-title" id="n8n-walkthrough-title">
+        <!-- PLACEHOLDER: Workflow name matching the case study -->
+        Shopify Abandoned Cart Recovery with AI Personalization
+      </h2>
+      <p id="n8n-walkthrough-desc">
+        <!-- PLACEHOLDER: Description of the workflow that was built for the previous client -->
+        This is what I shipped for the pet supplement brand. The nodes you'll see on the Loom (Shopify abandoned-checkout fetch, smart wait, re-check for conversion, OpenAI generating a personalised email per customer using cart contents, send via SMTP, log result) literally narrate the case study solution bullets. For your build, this is the cart recovery skeleton. The build plan shows how I'd extend it with multi-source lead capture, GHL nurture, order-to-Karachi sync, and a unified dashboard.
+      </p>
+      <div class="btn-row">
+        <a href="#workflow" class="btn-primary" id="btn-open-workflow">Open workflow in n8n &rarr;</a>
+        <a href="#template" class="btn-secondary" id="btn-original-template">Original template on n8n.io</a>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- ===== BUILD PLAN SECTION ===== -->
+    <div class="section-label">For the Loom &mdash; Build Plan</div>
+    <div class="loom-section">
+      <h2 class="section-title">Build plan page</h2>
+      <p>
+        Animated walkthrough of how I'd ship this for the prospect. Open in a second tab and screen-share while you talk through it.
+      </p>
+      <a href="build-plan.html" class="btn-primary" id="btn-open-buildplan">Open build plan &nearr;</a>
+      <div class="served-note">Served at /build-plan.html on this same localhost.</div>
+    </div>
+
+  </div>
+</body>
+</html>
