@@ -282,6 +282,14 @@
       font-family: 'SF Mono', 'Fira Code', monospace;
     }
 
+    /* --- Risk Mitigation Card (new) --- */
+    .risk-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
     /* --- Responsive --- */
     @media (max-width: 640px) {
       .page-container {
@@ -315,6 +323,9 @@
       <p id="summary-text">
         <!-- PLACEHOLDER: 2-3 sentence hook opening with #1 pain point -->
         You need ad traffic to convert into paid orders predictably. Every lead followed up instantly, every abandoned cart recovered with a personalised AI email, every order flowing cleanly from checkout to your Karachi warehouse, all visible from one place.
+      </p>
+      <p id="roi-text">
+        <!-- PLACEHOLDER: ROI statement e.g., "Saves 14 hours/week = $35 k/yr in recovered productivity." -->
       </p>
     </div>
 
@@ -364,7 +375,7 @@
         <li>Shopify webhook fires the moment a checkout is created</li>
         <li>Smart wait period before any recovery action, to avoid email fatigue</li>
         <li>Workflow re-queries Shopify to confirm the cart is still abandoned</li>
-        <li>&#x1F389; OpenAI generates a personalised recovery email using cart contents and customer history</li>
+        <li>🎉 OpenAI generates a personalised recovery email using cart contents and customer history</li>
         <li>Email sent via SMTP, every result logged for reporting</li>
       </ul>
 
@@ -387,6 +398,20 @@
 
     <hr class="section-divider">
 
+    <!-- ===== RISK MITIGATION & RELIABILITY GUARANTEE ===== -->
+    <div class="section-label">Risk Mitigation & Reliability Guarantee</div>
+    <div class="risk-card" id="risk-card">
+      <div class="cs-heading">Production Standards</div>
+      <ul>
+        <li>Retry logic with exponential back‑off on all API calls</li>
+        <li>Automatic alerts via Slack & Telegram on failure or timeout</li>
+        <li>API rate‑limiting and credential vaulting best practices</li>
+        <li>Comprehensive hand‑over documentation and Loom walkthrough for your team</li>
+      </ul>
+    </div>
+
+    <hr class="section-divider">
+
     <!-- ===== N8N WALKTHROUGH SECTION ===== -->
     <div class="section-label">For the Loom &mdash; n8n Walkthrough</div>
     <div class="loom-section">
@@ -396,7 +421,7 @@
       </h2>
       <p id="n8n-walkthrough-desc">
         <!-- PLACEHOLDER: Description of the workflow that was built for the previous client -->
-        This is what I shipped for the pet supplement brand. The nodes you'll see on the Loom (Shopify abandoned-checkout fetch, smart wait, re-check for conversion, OpenAI generating a personalised email per customer using cart contents, send via SMTP, log result) literally narrate the case study solution bullets. For your build, this is the cart recovery skeleton. The build plan shows how I'd extend it with multi-source lead capture, GHL nurture, order-to-Karachi sync, and a unified dashboard.
+        This is what I shipped for the pet supplement brand. The nodes you'll see on the Loom (Shopify abandoned‑checkout fetch, smart wait, re‑check for conversion, OpenAI generating a personalised email per customer using cart contents, send via SMTP, log result) literally narrate the case study solution bullets. For your build, this is the cart recovery skeleton. The build plan shows how I'd extend it with multi‑source lead capture, GHL nurture, order‑to‑warehouse sync, and a unified dashboard.
       </p>
       <div class="btn-row">
         <a href="#workflow" class="btn-primary" id="btn-open-workflow">Open workflow in n8n &rarr;</a>
@@ -411,7 +436,7 @@
     <div class="loom-section">
       <h2 class="section-title">Build plan page</h2>
       <p>
-        Animated walkthrough of how I'd ship this for the prospect. Open in a second tab and screen-share while you talk through it.
+        Animated walkthrough of how I'd ship this for the prospect. Open in a second tab and screen‑share while you talk through it.
       </p>
       <a href="build-plan.html" class="btn-primary" id="btn-open-buildplan">Open build plan &nearr;</a>
       <div class="served-note">Served at /build-plan.html on this same localhost.</div>

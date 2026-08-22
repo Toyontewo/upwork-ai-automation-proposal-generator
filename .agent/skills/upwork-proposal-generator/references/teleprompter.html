@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loom Teleprompter</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .controls {
+      padding: 0.5rem;
+      background: #f3f4f6;
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .controls label {
+      font-size: 0.85rem;
+    }
+    .script {
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+    }
+    .script p {
+      margin: 0;
+      line-height: 1.5;
+      padding: 0.5rem 1rem;
+    }
+    .highlight {
+      background: #dbeafe;
+    }
+  </style>
+  <script>
+    // Simple auto‑scroll teleprompter
+    let speed = 30; // pixels per second, default
+    let interval;
+    function startScroll() {
+      const script = document.getElementById('script');
+      const container = script.parentElement;
+      clearInterval(interval);
+      interval = setInterval(() => {
+        container.scrollTop += 1;
+        // Stop when bottom reached
+        if (container.scrollTop + container.clientHeight >= script.scrollHeight) {
+          clearInterval(interval);
+        }
+      }, 1000 / speed);
+    }
+    function updateSpeed(val) {
+      speed = parseInt(val, 10) || 30;
+      startScroll();
+    }
+    function updateFontSize(val) {
+      document.getElementById('script').style.fontSize = val + 'px';
+    }
+    function toggleHighlight(checkbox) {
+      const script = document.getElementById('script');
+      if (checkbox.checked) {
+        script.classList.add('highlight');
+      } else {
+        script.classList.remove('highlight');
+      }
+    }
+    window.addEventListener('load', () => {
+      startScroll();
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="controls">
+      <label>Speed (px/s):</input type="range" min="10" max="100" value="30" oninput="updateSpeed(this.value)"></label>
+      <label>Font Size:</input type="range" min="14" max="36" value="18" oninput="updateFontSize(this.value)"></label>
+      <label>Highlight Sections:</input type="checkbox" onchange="toggleHighlight(this)"></label>
+    </div>
+    <div class="script" id="script">
+      <p><!-- PLACEHOLDER: Teleprompter script will be inserted here -->
+      This is where the Loom teleprompter script appears. Replace this placeholder with the generated script text.
+      </p>
+    </div>
+  </div>
+</body>
+</html>

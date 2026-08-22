@@ -2,13 +2,13 @@
 name: upwork-ai-automation-proposal-generator
 description: >-
   Generates a complete proposal package for Upwork AI automation gigs.
-  Outputs 5 files: proposal.html, build-plan.html, loom_script.txt,
-  workflow.json (from n8n.io templates), and upwork_macro.txt.
+  Outputs 6 files: proposal.html, build-plan.html, loom_script.txt,
+  workflow.json (from n8n.io templates), upwork_macro.txt, and teleprompter.html.
 ---
 
 # Upwork AI Automation Proposal Generator
 
-Generates a multi-page proposal system for **Toyo Ntewo** targeting Upwork AI automation jobs (n8n, Make, Zapier). Analyzes the job post, sources a real n8n workflow template as social proof, and outputs 5 ready-to-use files.
+Generates a multi-page proposal system for **Toyo Ntewo** targeting Upwork AI automation jobs (n8n, Make, Zapier). Analyzes the job post, sources a real n8n workflow template as social proof, and outputs 6 ready-to-use files.
 
 ---
 
@@ -16,7 +16,8 @@ Generates a multi-page proposal system for **Toyo Ntewo** targeting Upwork AI au
 
 The user provides:
 * An Upwork job title, OR
-* A full Upwork job description.
+* A full Upwork job description, OR
+* A post caption/description of a pain point or problem they are facing.
 
 ---
 
@@ -97,7 +98,10 @@ Take the downloaded template JSON from Step 3:
 
 ---
 
-## Required Outputs (5 Files)
+## Required Outputs (6 Files)
+
+The proposal now embeds an ROI statement and a **Risk Mitigation & Reliability Guarantee** card. The build‑plan page includes the **Caption (Cover Letter)** section with the Upwork macro text. A dedicated teleprompter page (`teleprompter.html`) provides an auto‑scrolling view for the Loom script.
+
 
 ### Output 1: `proposal.html`
 
@@ -163,6 +167,10 @@ I'm an AI developer with ~2 years of process automation experience. I am very fa
 If you'd like specific examples of systems I've built and about...
 ```
 
+### Output 6: `teleprompter.html`
+
+A simple HTML page that displays the Loom teleprompter script with auto‑scrolling, adjustable speed, font size, and optional section highlighting. Served at `/teleprompter.html` on the same localhost.
+
 ---
 
 ## Strict Constraints
@@ -179,7 +187,7 @@ If you'd like specific examples of systems I've built and about...
 
 ## Serving the Output
 
-After generating all 5 files, serve them locally:
+After generating all 6 files, serve them locally:
 
 ```bash
 cd <output_directory>
@@ -187,6 +195,7 @@ python3 -m http.server 8080
 ```
 
 Then report:
-- Script (teleprompter, off-camera): http://localhost:8080
+- Script (teleprompter, off‑camera): http://localhost:8080
+- Teleprompter view: http://localhost:8080/teleprompter.html
 - Build plan (Loom visual): http://localhost:8080/build-plan.html
 - n8n workflow for the Loom: link to the original n8n.io template
